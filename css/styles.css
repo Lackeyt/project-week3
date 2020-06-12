@@ -5,6 +5,7 @@
 
 .transitionOut {
   top: -500px;
+  bottom: -10px;
   opacity: 0;
   transition: all 1s ease;
   position: absolute;
@@ -23,14 +24,15 @@
   opacity: 0;
   font-size: 20px;
   left: -300px;
+  position: relative;
   transition: all 1s ease;
 }
 
 #output.show{
-  left: 10px;
+  left: 0px;
   top: 15px;
-  width: 98%;
   position: absolute;
+  width: 100%;
   opacity: 1;
 }
 
