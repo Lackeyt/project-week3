@@ -74,8 +74,8 @@ $(document).ready(function() {
       output = "Beep Boop... You didn't enter anything, Neighbor.";
     } else if (isError(int) === true) {
       output = "Beep Boop... I can only count positive, whole numbers neighbor.";
-    } else if (int > 100000) {
-      output = "Beep Boop... Your number is too big there, neighbor. I can only count to 100000.";
+    } else if (int > 10000) {
+      output = "Beep Boop... Your number is too big there, neighbor. I can only count to 10000.";
     } else {
       output = phraseConverter(arrayBuilder(int, altFlag)).join(", ");
     };
