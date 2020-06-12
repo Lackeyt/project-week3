@@ -13,7 +13,7 @@ _{detailed desc}_
 
 | Spec| Example input | Example Output
 | ----------- | ----------- | ----------- |
-| The user may only enter a number | "hello" | "please enter a number" |
+| The user may only enter a number | n/a | -form set to only accept numbers- |
 | The number entered must be a positive integer | "-40", "5.234" | "please enter a positive whole number" |
 | The user inputed number will return a list of whole numbers from 0 to the user inputed number | "9" | "0, 1, 2, 3, 4, 5, 6, 7, 8, 9" |
 | Any number on the outputted list containing a "1" will be replaced with "Beep!" | "5" | "0, beep!" |
@@ -41,7 +41,7 @@ Any number on the outputted list containing a "1", "2", and a "3" will be replac
 1. Clone this repository onto your computer:
     "git clone https://github.com/Lackeyt/project-week3"
 2. Navigate into the "project-week3" directory in Visual Studio Code or preferred text editor:
-3. Open the projec
+3. Open the project
     "code ."
 3. Open index.html in your browser:
     "open index.html"

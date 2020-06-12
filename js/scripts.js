@@ -42,6 +42,13 @@ $(document).ready(function() {
     return arrayTemp;
   };
 
+  function isError(int) {
+    if (Number.isInteger(int) === true && int >= 0){
+      return false;
+    };
+    return true;
+  };
+
   //Main function taking integer input, returns converted array
   function main(int){
     output = phraseConverter(arrayBuilder(int));
@@ -50,9 +57,16 @@ $(document).ready(function() {
 
 //User Interface
   $("#numberForm").submit(function() {
-    event.preventDefault()
-    input = $("#numberInput").val()
-    $("p.outputText").text(main(input).join(", "))
-    $(".output").show()
+    event.preventDefault();
+    input = $("#numberInput").val();
+
+    $(".output").show();
+    if (isError(input)) {
+      $("p.outputText").text("Please enter a positive whole number.")
+    } else {
+      $("p.outputText").text(main(input).join(", "))
+    };
+    
+    
   })
 });
