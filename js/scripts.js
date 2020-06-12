@@ -44,6 +44,8 @@ $(document).ready(function() {
 
       if (array[i] % 3 === 0 && userName){
         arrayTemp.push("Won't you be my neighbor, " + userName + "?");
+      } else if (array[i] % 3 === 0 && !userName){
+        arrayTemp.push("Won't you be my neighbor?")
       } else {
         if (isThree === true){
           arrayTemp.push("Won't you be my neighbor?");
