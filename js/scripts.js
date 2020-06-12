@@ -42,7 +42,6 @@ $(document).ready(function() {
         };
       };
 
-      console.log(userName)
       if (array[i] % 3 === 0 && userName){
         arrayTemp.push("Won't you be my neighbor, " + userName + "?");
       } else {
@@ -60,6 +59,7 @@ $(document).ready(function() {
     return arrayTemp;
   };
 
+  //error handling for invalid entries
   function isError(int) {
     if (Number.isInteger(int) === true && int >= 0){
       return false;
@@ -81,7 +81,7 @@ $(document).ready(function() {
   };
 
 //User Interface
-  //On form Submission
+  //On form Submission "Neighborize!"
   $("#numberForm").submit(function() {
     event.preventDefault();
 
@@ -91,7 +91,9 @@ $(document).ready(function() {
     $("div#output").addClass("show");
     $(".output").show();
 
-    if (isError(input) === true) {
+    if (!input){
+      $("p.outputText").text("Beep Boop... You didn't enter anything, Neighbor.");
+    } else if (isError(input) === true) {
       $("p.outputText").text("Beep Boop... I can only count positive, whole numbers neighbor.");
     } else if (input > 100000) {
       $("p.outputText").text("Beep Boop... Your number is too big there, neighbor. I can only count to 100000.");
@@ -100,15 +102,19 @@ $(document).ready(function() {
     };
   });
 
+  //on alternate form submission "Neighborize Backwards!"
   $("#btnAlt").click(function() {
     event.preventDefault();
+    userName = $("#userName").val();
 
     input = parseFloat($("#numberInput").val());
     $("div#transitionIn").removeClass("show");
     $("div#output").addClass("show");
     $(".output").show();
 
-    if (isError(input) === true) {
+    if (!input){
+      $("p.outputText").text("Beep Boop... You didn't enter anything, Neighbor.");
+    } else if (isError(input) === true) {
       $("p.outputText").text("Beep Boop... I can only count positive, whole numbers neighbor.");
     } else if (input > 100000) {
       $("p.outputText").text("Beep Boop... Your number is too big there, neighbor. I can only count to 100000.");
@@ -117,7 +123,7 @@ $(document).ready(function() {
     };
   });
 
-  //On Try Again button click
+  //On "Try Again" button click
   $("#tryAgain").click(function() {
     location.reload();
   });
