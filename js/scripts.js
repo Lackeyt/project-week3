@@ -14,7 +14,7 @@ $(document).ready(function() {
         array.push(parseInt(intLength));
         intLength -= 1;
       };
-    }
+    };
     return array;
   };
 
@@ -37,8 +37,10 @@ $(document).ready(function() {
           isOne = true;
         };
       };
-
-      if (array[i] % 3 === 0 && userName){
+      
+      if (array[i] === 0) {
+        arrayTemp.push(array[i]);
+      } else if (array[i] % 3 === 0 && userName){
         arrayTemp.push("Won't you be my neighbor, " + userName + "?");
       } else if (array[i] % 3 === 0 && !userName){
         arrayTemp.push("Won't you be my neighbor?")
@@ -76,7 +78,7 @@ $(document).ready(function() {
       output = "Beep Boop... Your number is too big there, neighbor. I can only count to 100000.";
     } else {
       output = phraseConverter(arrayBuilder(int, altFlag)).join(", ");
-    }
+    };
     return output;
   };
 

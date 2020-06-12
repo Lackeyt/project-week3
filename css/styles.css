@@ -16,10 +16,6 @@
   opacity: 1;
 }
 
-.transitionRight {
-  animation: outputTransition 1s;
-}
-
 #output {
   opacity: 0;
   font-size: 20px;
