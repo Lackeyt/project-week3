@@ -1,13 +1,13 @@
 #  _Mr. Roboger's Neighborhood_
 
-#### _{brief desc}_
-##### __Created:__ 5/29/2020
-##### __Last Updated:__ 6/3/2020 
+#### _Takes a user inputted number and outputs a list from 0->input number with certain values replaced with phrases_
+##### __Created:__ 6/12/2020
+##### __Last Updated:__ 6/12/2020 
 ##### By _**Tyson Lackey**_  
 
 ## Description
 
-_{detailed desc}_
+_Input form accepts number entry from the user. The input number is first checked to ensure it is a positive, whole number between 0->100000. Errors are outputted based on the infraction to the previous rules. If valid number is entered, it is broken into an array with the elements being whole numbers from 0 to the user inputed number. This array is passed through a converter to assign phrases to elements of the array that match the rules listed in the behavior below. The updated array is joined in a ", " delimited string and outputted to the user on a new frame._
 
 ## Behaviors
 
@@ -71,7 +71,7 @@ Any number on the outputted list containing a "1", "2", and a "3" will be replac
 
 ## Resources:
 
-* 
+* https://codepen.io/astrotim/pen/KDBbe -helped with syntax for CSS transitions
 
 ### License
 
