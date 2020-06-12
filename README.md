@@ -7,13 +7,13 @@
 
 ## Description
 
-_Input form accepts number entry from the user. The input number is first checked to ensure it is a positive, whole number between 0->100000. Errors are outputted based on the infraction to the previous rules. If valid number is entered, it is broken into an array with the elements being whole numbers from 0 to the user inputed number. This array is passed through a converter to assign phrases to elements of the array that match the rules listed in the behavior below. The updated array is joined in a ", " delimited string and outputted to the user on a new frame._
+_Input form accepts number entry from the user. The input number is first checked to ensure it is a positive, whole number between 0->10000. Errors are outputted based on the infraction to the previous rules. If valid number is entered, it is broken into an array with the elements being whole numbers from 0 to the user inputed number. This array is passed through a converter to assign phrases to elements of the array that match the rules listed in the behavior below. The updated array is joined in a ", " delimited string and outputted to the user on a new frame. There is an alternate button to display the results in reverse order._
 
 ## Behaviors
 
 | Spec| Example input | Example Output
 | ----------- | ----------- | ----------- |
-| The user may only enter a number | n/a | -form set to only accept numbers- |
+| The user may only enter a number to the number field| n/a | -form set to only accept numbers- |
 | The number entered must be a positive integer | "-40", "5.234" | "please enter a positive whole number" |
 | The user inputed number will return a list of whole numbers from 0 to the user inputed number | "9" | "0, 1, 2, 3, 4, 5, 6, 7, 8, 9" |
 | Any number on the outputted list containing a "1" will be replaced with "Beep!" | "5" | "0, beep!" |
@@ -25,9 +25,6 @@ _Input form accepts number entry from the user. The input number is first checke
 Any number on the outputted list containing a "1", "2", and a "3" will be replaced with "Won't you be my neighbor?" | "123" | "..., **Won't you be my neighbor?**" |
 | The user must be able to enter a new number and see new results | "2" --> "4" | "0, Beep!, Boop!" --> "0, Beep!, Boop!, Won't you be my neighbor?, 4" |
 | The user can select the "Neighborize Backwards!" button to display results in reverse order, following the all other rules | "3" | "Won't you be my neighbor?, Boop!, Beep!, 0" |
-
-
-
 
 ## Setup/Installation Requirements
 
