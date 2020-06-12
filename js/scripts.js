@@ -45,8 +45,9 @@ $(document).ready(function() {
   function isError(int) {
     if (Number.isInteger(int) === true && int >= 0){
       return false;
-    };
+    } else {
     return true;
+    }
   };
 
   //Main function taking integer input, returns converted array
@@ -58,15 +59,15 @@ $(document).ready(function() {
 //User Interface
   $("#numberForm").submit(function() {
     event.preventDefault();
-    input = $("#numberInput").val();
+    input = parseFloat($("#numberInput").val());
 
     $(".output").show();
-    if (isError(input)) {
-      $("p.outputText").text("Please enter a positive whole number.")
+    if (isError(input) === true) {
+      $("p.outputText").text("Beep Boop... I can only count positive, whole numbers neighbor.")
+    } else if (input > 100000) {
+      $("p.outputText").text("Beep Boop... Your number is too big there, neighbor. I can only count to 100000.")
     } else {
       $("p.outputText").text(main(input).join(", "))
     };
-    
-    
   })
 });

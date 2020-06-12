@@ -1,3 +1,65 @@
+.transitionIn {
+  animation: transitionIn 1s;
+  position: relative;
+}
+
+.output {
+  animation: outputTransition 1s;
+  position: relative;
+}
+
+@keyframes transitionIn{
+  from {
+    opacity: 0;
+    top: -200px;
+  }
+
+  to {
+  opacity: 1;
+  top: 0rem;
+  }
+}
+
+@keyframes outputTransition{
+  from {
+    opacity: 0;
+    left: -200px;
+  }
+
+  to {
+  opacity: 1;
+  left: 0rem;
+  }
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: rgb(48, 16, 78);
+  color: white;
+}
+
 .output {
   display: none;
+  font-size: 20px;
 }
+
+body {
+  background-color: blueviolet;
+  font-family: 'Roboto';
+}
+
+.well{
+  background-color: rgb(48, 16, 78);
+  color: white;
+  border-color: rgb(48, 16, 78);
+}
+
+button {
+  background-color: rgb(108, 36, 177);
+}
+
+input.form-control {
+  background-color: rgb(77, 5, 144);
+  color: white;
+}
+
