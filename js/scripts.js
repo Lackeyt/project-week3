@@ -72,13 +72,29 @@ $(document).ready(function() {
 
   //Main function taking integer input, returns converted array
   function main(int){
-    output = phraseConverter(arrayBuilder(int));
+    if (!int){
+      output = "Beep Boop... You didn't enter anything, Neighbor.";
+    } else if (isError(int) === true) {
+      output = "Beep Boop... I can only count positive, whole numbers neighbor.";
+    } else if (int > 100000) {
+      output = "Beep Boop... Your number is too big there, neighbor. I can only count to 100000.";
+    } else {
+      output = phraseConverter(arrayBuilder(int)).join(", ");
+    }
     return output;
   };
 
   //Alternative function taking integer input, returns converted array in reverse order
   function mainAlt(int){
-    output = phraseConverter(arrayBuilderAlt(int));
+    if (!int){
+      output = "Beep Boop... You didn't enter anything, Neighbor.";
+    } else if (isError(int) === true) {
+      output = "Beep Boop... I can only count positive, whole numbers neighbor.";
+    } else if (int > 100000) {
+      output = "Beep Boop... Your number is too big there, neighbor. I can only count to 100000.";
+    } else {
+      output = phraseConverter(arrayBuilderAlt(int)).join(", ");
+    }
     return output;
   };
 
@@ -92,16 +108,7 @@ $(document).ready(function() {
     $("div#transitionIn").removeClass("show");
     $("div#output").addClass("show");
     $(".output").show();
-
-    if (!input){
-      $("p.outputText").text("Beep Boop... You didn't enter anything, Neighbor.");
-    } else if (isError(input) === true) {
-      $("p.outputText").text("Beep Boop... I can only count positive, whole numbers neighbor.");
-    } else if (input > 100000) {
-      $("p.outputText").text("Beep Boop... Your number is too big there, neighbor. I can only count to 100000.");
-    } else {
-      $("p.outputText").text(main(input).join(", "));
-    };
+    $("p.outputText").text(main(input));
   });
 
   //on alternate form submission "Neighborize Backwards!"
@@ -113,16 +120,7 @@ $(document).ready(function() {
     $("div#transitionIn").removeClass("show");
     $("div#output").addClass("show");
     $(".output").show();
-
-    if (!input){
-      $("p.outputText").text("Beep Boop... You didn't enter anything, Neighbor.");
-    } else if (isError(input) === true) {
-      $("p.outputText").text("Beep Boop... I can only count positive, whole numbers neighbor.");
-    } else if (input > 100000) {
-      $("p.outputText").text("Beep Boop... Your number is too big there, neighbor. I can only count to 100000.");
-    } else {
-      $("p.outputText").text(mainAlt(input).join(", "));
-    };
+    $("p.outputText").text(mainAlt(input));
   });
 
   //On "Try Again" button click
