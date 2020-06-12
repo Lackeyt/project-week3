@@ -41,14 +41,20 @@ $(document).ready(function() {
           isOne = true;
         };
       };
-      if (isThree === true){
-        arrayTemp.push("Won't you be my neighbor?");
-      } else if (isThree === false && isTwo === true){
-        arrayTemp.push("Boop!");
-      } else if (isThree === false && isTwo === false && isOne === true){
-        arrayTemp.push("Beep!");
+
+      console.log(userName)
+      if (array[i] % 3 === 0 && userName){
+        arrayTemp.push("Won't you be my neighbor, " + userName + "?");
       } else {
-        arrayTemp.push(array[i]);
+        if (isThree === true){
+          arrayTemp.push("Won't you be my neighbor?");
+        } else if (isThree === false && isTwo === true){
+          arrayTemp.push("Boop!");
+        } else if (isThree === false && isTwo === false && isOne === true){
+          arrayTemp.push("Beep!");
+        } else {
+          arrayTemp.push(array[i]);
+        };
       };
     };
     return arrayTemp;
@@ -80,6 +86,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     input = parseFloat($("#numberInput").val());
+    userName = $("#userName").val();
     $("div#transitionIn").removeClass("show");
     $("div#output").addClass("show");
     $(".output").show();

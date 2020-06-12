@@ -21,8 +21,12 @@ _Input form accepts number entry from the user. The input number is first checke
 | Any number on the outputted list containing a "3" will be replaced with "Won't you be my neighbor?" | "3" | "0, beep!, boop!, Won't you be my neighbor?"  |
 | Any number on the outputted list containing a "1" and a "2", but not a "3" will be replaced with "Boop!" | "12" | "0, Beep!, boop!, Won't you be my neighbor?, 4, 5, 6, 7, 8, 9, Beep!, Beep!, **Boop!**" |
 | Any number on the outputted list containing a "1" and a "3", but not a "2" will be replaced with "Won't you be my neighbor?" | "13" | "0, Beep!, boop!, Won't you be my neighbor?, 4, 5, 6, 7, 8, 9, Beep!, Beep!, Boop!, **Won't you be my neighbor?**" |
+| Any number on the outputted list divisible by 3 will be replaced by "Won't you be my neighbor[, user name]?", regardless of other digits present. | "31" & "Tyson" | "..., Won't you be my neighbor, Tyson?" |
 Any number on the outputted list containing a "1", "2", and a "3" will be replaced with "Won't you be my neighbor?" | "123" | "..., **Won't you be my neighbor?**" |
 | The user must be able to enter a new number and see new results | "2" --> "4" | "0, Beep!, Boop!" --> "0, Beep!, Boop!, Won't you be my neighbor?, 4" |
+| The user can select the "Neighborize Backwards!" button to display results in reverse order, following the all other rules | "3" | "Won't you be my neighbor?, Boop!, Beep!, 0" |
+
+
 
 
 ## Setup/Installation Requirements
