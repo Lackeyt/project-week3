@@ -57,10 +57,13 @@ $(document).ready(function() {
   };
 
 //User Interface
+  //On form Submission
   $("#numberForm").submit(function() {
+    event.preventDefault();
+
     $("div#transitionIn").removeClass("show")
     $("div#output").addClass("show")
-    event.preventDefault();
+
     input = parseFloat($("#numberInput").val());
 
     $(".output").show();
@@ -71,6 +74,10 @@ $(document).ready(function() {
     } else {
       $("p.outputText").text(main(input).join(", "))
     };
+  });
 
+  //On Try Again button click
+  $("#tryAgain").click(function() {
+    location.reload();
   });
 });
