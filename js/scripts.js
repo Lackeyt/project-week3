@@ -1,31 +1,34 @@
 $(document).ready(function() {
 //Business Logic
+  //Converts an integer into an array of numbers counting from 0-->input integer
   function arrayBuilder(int){
     let array = []
     let intLength = int
     while (intLength >= 0) {
       array.unshift(parseInt(intLength))
       intLength -= 1
-    }
+    };
     return array
   };
 
+  //Replace elements in an array of numbers with Phrases
   function phraseConverter(array) {
     arrayTemp = []
     for (i=0; i < array.length; i++){
       let isThree = false
       let isTwo = false
       let isOne = false
-      for (n=0; n < array[i].length; n++){
-        if (array[i][n] === 3){
+      let stringElement = array[i].toString()
+      for (n=0; n < stringElement.length; n++){
+        if (stringElement[n] === "3"){
           isThree = true
           break;
-        } else if (array[i][n] === 2) {
+        } else if (stringElement[n] === "2") {
           isTwo = true
-        } else if (array[i][n] === 1) {
+        } else if (stringElement[n] === "1") {
           isOne = true
-        }
-      }
+        };
+      };
       if (isThree === true){
         arrayTemp.push("Won't you be my neighbor?")
       } else if (isThree === false && isTwo === true){
@@ -34,14 +37,17 @@ $(document).ready(function() {
         arrayTemp.push("Beep!")
       } else {
         arrayTemp.push(array[i])
-      }
-    }
+      };
+    };
     return arrayTemp;
-  }
+  };
+
+  //Main function taking integer input, returns converted array
   function main(int){
-    output = phraseConverter(arrayBuilder(int))
-    return output
-  }
+    output = phraseConverter(arrayBuilder(int));
+    return output;
+  };
+
 //User Interface
   $("#numberForm").submit(function() {
     event.preventDefault()
