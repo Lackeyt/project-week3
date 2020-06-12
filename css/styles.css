@@ -1,17 +1,43 @@
-.transitionIn {
+#transitionIn {
   animation: transitionIn 1s;
   position: relative;
 }
 
-.output {
+.transitionOut {
+  top: -500px;
+  opacity: 0;
+  transition: all 1s ease;
+  position: absolute;
+}
+
+.transitionOut.show {
+  top: 0px;
+  opacity: 1;
+}
+
+.transitionRight {
   animation: outputTransition 1s;
-  position: relative;
+}
+
+#output {
+  opacity: 0;
+  font-size: 20px;
+  left: -300px;
+  transition: all 1s ease;
+}
+
+#output.show{
+  left: 10px;
+  top: 15px;
+  width: 98%;
+  position: absolute;
+  opacity: 1;
 }
 
 @keyframes transitionIn{
   from {
     opacity: 0;
-    top: -200px;
+    top: -500px;
   }
 
   to {
@@ -20,27 +46,10 @@
   }
 }
 
-@keyframes outputTransition{
-  from {
-    opacity: 0;
-    left: -200px;
-  }
-
-  to {
-  opacity: 1;
-  left: 0rem;
-  }
-}
-
 .jumbotron {
   text-align: center;
   background-color: rgb(48, 16, 78);
   color: white;
-}
-
-.output {
-  display: none;
-  font-size: 20px;
 }
 
 body {

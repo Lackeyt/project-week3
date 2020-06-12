@@ -11,7 +11,7 @@
   <title>Mr. Roboger's Neighborhood</title>
 </head>
 <body>
-  <div class="container-fluid transitionIn">
+  <div class="container-fluid transitionOut show" id="transitionIn">
     <h1 class = "jumbotron">Welcome to Mr. ROBOger's Neighborhood!</h1>
     <form id="numberForm" class="well">
       <div class="form-group">
@@ -21,8 +21,11 @@
       <button type="submit" class = "btn">Neighborize!</button>
     </form>
   </div>
-  <div class="output container-fluid">
-    <p class="outputText well"></p>
+  <div id="output" class="transitionRight">
+    <div class="container-fluid well">
+      <button class="tryAgain btn">Try Again!</button>
+      <p class="outputText"></p>
+    </div>
   </div>
 </body>
 </html>

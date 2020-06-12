@@ -58,6 +58,8 @@ $(document).ready(function() {
 
 //User Interface
   $("#numberForm").submit(function() {
+    $("div#transitionIn").removeClass("show")
+    $("div#output").addClass("show")
     event.preventDefault();
     input = parseFloat($("#numberInput").val());
 
@@ -69,5 +71,6 @@ $(document).ready(function() {
     } else {
       $("p.outputText").text(main(input).join(", "))
     };
-  })
+
+  });
 });
