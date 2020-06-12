@@ -1,24 +1,20 @@
 $(document).ready(function() {
 //Business Logic
   //Converts an integer into an array of numbers counting from 0-->input integer
-  function arrayBuilder(int){
+  function arrayBuilder(int, altFlag){
     let array = [];
     let intLength = int;
-    while (intLength >= 0) {
-      array.unshift(parseInt(intLength));
-      intLength -= 1;
-    };
-    return array;
-  };
-
-  //Converts an integer into an array of numbers counting from input integer -> 0
-  function arrayBuilderAlt(int){
-    let array = [];
-    let intLength = int;
-    while (intLength >= 0) {
-      array.push(parseInt(intLength));
-      intLength -= 1;
-    };
+    if (altFlag === false){
+      while (intLength >= 0) {
+        array.unshift(parseInt(intLength));
+        intLength -= 1;
+      };
+    } else if (altFlag === true) {
+      while (intLength >= 0) {
+        array.push(parseInt(intLength));
+        intLength -= 1;
+      };
+    }
     return array;
   };
 
@@ -71,7 +67,7 @@ $(document).ready(function() {
   };
 
   //Main function taking integer input, returns converted array
-  function main(int){
+  function main(int, altFlag){
     if (!int){
       output = "Beep Boop... You didn't enter anything, Neighbor.";
     } else if (isError(int) === true) {
@@ -79,21 +75,7 @@ $(document).ready(function() {
     } else if (int > 100000) {
       output = "Beep Boop... Your number is too big there, neighbor. I can only count to 100000.";
     } else {
-      output = phraseConverter(arrayBuilder(int)).join(", ");
-    }
-    return output;
-  };
-
-  //Alternative function taking integer input, returns converted array in reverse order
-  function mainAlt(int){
-    if (!int){
-      output = "Beep Boop... You didn't enter anything, Neighbor.";
-    } else if (isError(int) === true) {
-      output = "Beep Boop... I can only count positive, whole numbers neighbor.";
-    } else if (int > 100000) {
-      output = "Beep Boop... Your number is too big there, neighbor. I can only count to 100000.";
-    } else {
-      output = phraseConverter(arrayBuilderAlt(int)).join(", ");
+      output = phraseConverter(arrayBuilder(int, altFlag)).join(", ");
     }
     return output;
   };
@@ -102,25 +84,25 @@ $(document).ready(function() {
   //On form Submission "Neighborize!"
   $("#numberForm").submit(function() {
     event.preventDefault();
-
-    input = parseFloat($("#numberInput").val());
+    let altFlag = false
+    let input = parseFloat($("#numberInput").val());
     userName = $("#userName").val();
     $("div#transitionIn").removeClass("show");
     $("div#output").addClass("show");
     $(".output").show();
-    $("p.outputText").text(main(input));
+    $("p.outputText").text(main(input, altFlag));
   });
 
   //on alternate form submission "Neighborize Backwards!"
   $("#btnAlt").click(function() {
     event.preventDefault();
     userName = $("#userName").val();
-
-    input = parseFloat($("#numberInput").val());
+    let altFlag = true
+    let input = parseFloat($("#numberInput").val());
     $("div#transitionIn").removeClass("show");
     $("div#output").addClass("show");
     $(".output").show();
-    $("p.outputText").text(mainAlt(input));
+    $("p.outputText").text(main(input, altFlag));
   });
 
   //On "Try Again" button click
