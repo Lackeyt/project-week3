@@ -1,4 +1,4 @@
-#  _{title}_
+#  _Mr. Roboger's Neighborhood_
 
 #### _{brief desc}_
 ##### __Created:__ 5/29/2020
@@ -13,13 +13,17 @@ _{detailed desc}_
 
 | Spec| Example input | Example Output
 | ----------- | ----------- | ----------- |
-| Behavior | input | output |
-| Behavior | input | output |
-| Behavior | input | output |
-| Behavior | input | output |
-| Behavior | input | output |
-| Behavior | input | output |
-| Behavior | input | output |
+| The user may only enter a number | "hello" | "please enter a number" |
+| The number entered must be a positive integer | "-40", "5.234" | "please enter a positive whole number" |
+| The user inputed number will return a list of whole numbers from 0 to the user inputed number | "9" | "0, 1, 2, 3, 4, 5, 6, 7, 8, 9" |
+| Any number on the outputted list containing a "1" will be replaced with "Beep!" | "5" | "0, beep!" |
+| Any number on the outputted list containing a "2" will be replaced with "Boop!" | "2" | "0, beep!, boop!" |
+| Any number on the outputted list containing a "3" will be replaced with "Won't you be my neighbor?" | "3" | "0, beep!, boop!, Won't you be my neighbor?"  |
+| Any number on the outputted list containing a "1" and a "2", but not a "3" will be replaced with "Boop!" | "12" | "0, Beep!, boop!, Won't you be my neighbor?, 4, 5, 6, 7, 8, 9, Beep!, Beep!, **Boop!**" |
+| Any number on the outputted list containing a "1" and a "3", but not a "2" will be replaced with "Won't you be my neighbor?" | "13" | "0, Beep!, boop!, Won't you be my neighbor?, 4, 5, 6, 7, 8, 9, Beep!, Beep!, Boop!, **Won't you be my neighbor?**" |
+Any number on the outputted list containing a "1", "2", and a "3" will be replaced with "Won't you be my neighbor?" | "123" | "..., **Won't you be my neighbor?**" |
+| The user must be able to enter a new number and see new results | "2" --> "4" | "0, Beep!, Boop!" --> "0, Beep!, Boop!, Won't you be my neighbor?, 4" |
+
 
 ## Setup/Installation Requirements
 
@@ -35,8 +39,8 @@ _{detailed desc}_
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Open via Bash/GitBash:
 
 1. Clone this repository onto your computer:
-    "git clone {github repo URL}"
-2. Navigate into the "{project name}" directory in Visual Studio Code or preferred text editor:
+    "git clone https://github.com/Lackeyt/project-week3"
+2. Navigate into the "project-week3" directory in Visual Studio Code or preferred text editor:
 3. Open the projec
     "code ."
 3. Open index.html in your browser:
@@ -44,7 +48,7 @@ _{detailed desc}_
 
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Directly in your Browser:
 
-* Navigate to {GH Pages URL} in your web browser.
+* Navigate to https://lackeyt.github.io/gh-pages/project-week3/ in your web browser.
 
 ## Known Bugs
 
